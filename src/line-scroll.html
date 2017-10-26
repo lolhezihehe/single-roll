@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>single-roll</title>
+    <link rel="stylesheet" href="./css/line-scroll.css">
+</head>
+
+<body style="margin: 0;padding: 0;background-color:#f8f8f8">
+    <div id="single-roll"></div>
+
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./js/single-roll.js"></script>
+<script>
+    var dataFormat = [{
+        text: "single line text rolling",
+        href: "https://github.com/lolhezihehe/single-roll"
+    }, {
+        text: "十九届一中全会",
+        href: "http://news.sina.com.cn/china/xlxw/2017-10-25/doc-ifynfrfm8966448.shtml"
+    }, {
+        text: "十九届一中全会十九届一中全会十九届一中全会十九届一中全会",
+        href: ""
+    }]
+    $('#single-roll').singleRoll({
+        data: dataFormat,
+        notice: true,
+        ellipsis: true,
+        canClose: true
+    })
+</script>
+
+</html>
