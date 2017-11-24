@@ -25,13 +25,13 @@
 			ellipsis: false, // overflow ellipsis
 			canClose: false // can close
 		}, options);
-		var noRoll = settings.data === undefined || settings.data.length === 0;
+		var noData = settings.data === undefined || settings.data.length === 0;
 		var ret = {
 			createElems: function () {
 				var Elems = '';
 				$self.addClass('cos-single-roll');
 				Elems += '<ul class="cos-single-swap">';
-				if (noRoll) {
+				if (noData) {
 					Elems += '<li>暂无公告</li></ul>';
 					$self.append('<ul class="cos-single-swap"><li>暂无公告</li></ul>');
 					return false;
@@ -44,7 +44,7 @@
 					}
 				}
 				if (settings.data[0].href) {
-					Elems += '<li><a href="' + settings.data[0].href + '">' + settings.data[0].text + '</a></li></ul>';;
+					Elems += '<li><a href="' + settings.data[0].href + '">' + settings.data[0].text + '</a></li></ul>';
 				} else {
 					Elems += '<li>' + settings.data[0].text + '</li></ul>';
 				}
@@ -76,7 +76,7 @@
 			},
 
 			rolling: function () {
-				if (noRoll) return false;
+				if (noData) return false;
 				var top = 0,
 					h = settings.height;
 				var $swap = $($self.find('.cos-single-swap')[0]);
