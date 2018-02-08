@@ -21,15 +21,15 @@
 	display: inline-block;
     vertical-align: middle;
 	height: 16px;
-	width: 16px;
+	width: 16px;    
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABRklEQVQ4T72T0VHCQBRF790tgMAnZsZ0oFZg6IAO0AYCqQA7SAIFYAl0IB1oB/AB5g/yo37tPmfRAAMko+OM+/vunrfvvrtEzfGSjQf10Sv67axKxqqClyyvqfBE0ltHF5W6swVvtLxT4KSElwD3oiJuFodNTwCtbJmC7B+KSkBztFoAMheDuIj9F6fZARyd+n1CoHs81v4FeUBlU0BuxaLjIPTGeUgxQwgDEsE5TxzAeaI0euvIj5vZagpKYxP5Hbay1QOIYd029gA+W8g9jJ4pbefWyM2PAa5BK3t9FNpgE/mh80PA9P8AXx64ERjDcLobYRsYjRRgQOCy0sRxHipruuu+P/g20XOjHK3xbUbwqnaN2iaAdMQg3K7xWOyMAqVXE6SFGAxOgnR44U9RLkHfAZsSbPz6M+0gSR5AS7eI2mlV0D4B8o+0Z1j5Ey0AAAAASUVORK5CYII=');
 }
 .cos-single-swap {
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
     right: 0;
-    display: block;
     margin: 0;
     padding: 0;
 }

@@ -21,62 +21,43 @@
 			height: 30,
 			unit: "px",
 			interval: 3000, // rolling interval time
-			notice: true, // show icon notice
+			notice: false, // show icon notice
 			ellipsis: false, // overflow ellipsis
-			canClose: false // can close
+			close: false // can close
 		}, options);
-		var noData = settings.data === undefined || settings.data.length === 0;
 		var ret = {
 			createElems: function () {
 				var Elems = '';
 				$self.addClass('cos-single-roll');
-				Elems += '<ul class="cos-single-swap">';
-				if (noData) {
-					Elems += '<li>暂无公告</li></ul>';
-					$self.append('<ul class="cos-single-swap"><li>暂无公告</li></ul>');
-					return false;
-				}
-				for (var i = 0; i < settings.data.length; i++) {
-					if (settings.data[i].href) {
-						Elems += '<li><a href="' + settings.data[i].href + '">' + settings.data[i].text + '</a></li>';
-					} else {
-						Elems += '<li>' + settings.data[i].text + '</li>';
-					}
-				}
-				if (settings.data[0].href) {
-					Elems += '<li><a href="' + settings.data[0].href + '">' + settings.data[0].text + '</a></li></ul>';
-				} else {
-					Elems += '<li>' + settings.data[0].text + '</li></ul>';
-				}
-				$self.append(Elems);
+				Elems += '<ul class="cos-single-swap">'+ $self.html() + '</ul>';
+				$self.html(Elems);
 			},
 
-			hasNotice: function () {
+			notice: function () {
 				if (settings.notice) {
 					$self.addClass('notice');
-					$self.append('<div class="cos-single-notice"><i></i></div>');
+					$self.prepend('<div class="cos-single-notice"><i></i></div>');
 				}
 			},
 
-			hasClose: function () {
-				if (settings.canClose) {
+			close: function () {
+				if (settings.close) {
 					var $closeElem = $('<div class="cos-single-close"><i></i></div>');
 					$closeElem.click(function () {
 						$self.remove();
 					})
 					$self.addClass('close');
-					$self.prepend($closeElem);
+					$self.append($closeElem);
 				}
 			},
 
-			hasEllipsis: function () {
+			ellipsis: function () {
 				if (settings.ellipsis) {
 					$self.find('.cos-single-swap').addClass('ellipsis');
 				}
 			},
 
 			rolling: function () {
-				if (noData) return false;
 				var top = 0,
 					h = settings.height;
 				var $swap = $($self.find('.cos-single-swap')[0]);
@@ -96,9 +77,9 @@
 
 			init: function () {
 				this.createElems();
-				this.hasNotice();
-				this.hasClose();
-				this.hasEllipsis();
+				this.notice();
+				this.close();
+				this.ellipsis();
 				this.rolling();
 			}
 
