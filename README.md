@@ -22,7 +22,7 @@ Basic:
 ```js
 $('#single-roll').singleRoll();
 ```
-or
+or:
 ```js
 $('#single-roll').singleRoll({
     notice: true,
